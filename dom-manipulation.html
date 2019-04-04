@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--Syntax Highlighter-->
+    <link rel="stylesheet" href="css/prism.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Learning jQuery - DOM Manipulation</title>
+  </head>
+  <body>
+    <header class="jumbotron">DOM Manipulation</header>
+    <button id="homeButton" class="btn" onclick="homeButtonFunction()">HOME</button>
+
+    <div class="container-fluid row">
+      <h2 class="col-12">Access Methods</h2>
+      <div class="container pt-3 lead">
+        <p class="bg-darkRed text-center p-2">The <span class="highlight">$('')</span> method works just like <span class="highlight">querySelectorAll('')</span></p>
+      </div>
+      <article class="col-11 card">
+        <h2 class="card-title">Selecting Elements in jQuery</h2>
+        <div class="row">
+          <div class="col-6">
+            <h3 class="pb-2">By ID</h3>
+            <pre>
+              <code class="language-javascript">
+$('#select-by-id').click(function() {
+  $('#giveMeAText').text("Hello there! Did you notice I wasn't here before?");
+});
+              </code>
+            </pre>
+            <button id='select-by-id' class="btn btn-lilac col-12">Click me to see the code run!</button>
+            <p id="giveMeAText"></p>
+            <p id="explanationId" class="bg-darkRed">We use <span class="highlight">$('#giveMeAText')</span> to select the element with the id "giveMeAText" and then use the <span class="highlight">text()</span> method to set its inner text to "Hello there! Did you notice I wasn't here before?"</p>
+          </div>
+          <div class="col-6">
+            <h3>By Class</h3>
+            <pre>
+              <code class="language-javascript">
+$('#select-by-class').click(function() {
+  $('.text-info').text('spans with class "text-info" changed text');
+//using objects to change multiple properties
+  $('.text-info').css({
+    textDecoration: 'none',
+    fontSize: '2rem'
+  });
+});
+              </code>
+            </pre>
+            <button id="select-by-class" class="btn btn-lilac col-12">Click me to see the code run!</button>
+            <p>Hi there! So, this time i have a span with a class called blue <span class="text-info">here</span> and <span class="text-info">here</span>, but <span>not here</span>. I think you already know what to do!</p>
+            <p class="bg-darkRed">We use <span class="highlight">$('#.text-info')</span> to select the elements with the class "text-info" and then use the <span class="highlight">text()</span> method to set its inner text to "spans with class "text-info" changed text" and the <span class="highlight">css()</span> method to remove the underlines by changing its text-decoration to 'none'</p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-6">
+            <h3>By tag Name</h3>
+            <pre>
+              <code class="language-javascript">
+  $('#select-by-tag').click(function() {
+    $('h4').text('there');
+  });
+              </code>
+            </pre>
+            <button id="select-by-tag" class="btn btn-lilac col-12">Click me to see the code run!</button>
+            <p>Hi there! I have a h4 <h4>here</h4> and <h4>here</h4>. Click the button above to see them change to the word "there".</p>
+            <p class="bg-darkRed">Using <span class="highlight">$('h4')</span>, i can grab all h4 elements and change their content using <span class="highlight">text()</span> method</p>
+          </div>
+          <div class="col-6">
+            <h3>Other Selectors</h3>
+            <pre>
+              <code class="language-javascript">
+$('#other-selector').click(function() {
+  var styles = {
+    listStyleType: 'none',
+    backgroundColor: '#04ae20',
+    textShadow: 'none'
+  };
+
+  $('li.grabme:first-of-type').text('Told you I was the FIRST');
+  //using an object stored in a variable to style multiple properties at once
+  $('li.grabme:first-of-type').css(styles);
+});
+              </code>
+            </pre>
+            <button id="other-selector" class="btn btn-lilac col-12">Click me to see the code run!</button>
+            <ul id=firstList>
+              <li class="grabme">I'm the first</li>
+              <li class="grabme">I'm the second</li>
+              <li class="grabme">I'm the third</li>
+              <li class="grabme">I'm the fourth</li>
+            </ul>
+            <p>Hi there! I have a h4 <h4>here</h4> and <h4>here</h4>. Click the button above to see them change to the word "there".</p>
+            <p class="bg-darkRed">Using <span class="highlight">$('h4')</span>, i can grab all h4 elements and change their content using <span class="highlight">text()</span> method</p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-6">
+            <h3>jQuery Selectors - ':header'</h3>
+            <pre>
+              <code class="language-javascript">
+$('#header-jq-selector').click(function() {
+  $(':header').css('color', '#04ae20');
+});
+              </code>
+            </pre>
+            <button id="header-jq-selector" class="btn btn-lilac col-12">Click me to see the code run!</button>
+            <p class="bg-darkRed">Using <span class="highlight">$(':header')</span>, i can grab all header elements (through h1 to h6) and change their color using the <span class="highlight">css()</span> method</p>
+          </div>
+          <div class="col-6">
+            <h3>jQuery Selectors - ':contains("")'</h3>
+            <pre>
+              <code class="language-javascript">
+$('#contains-jq-selector').click(function() {
+  $('button:contains("code")').css('text-decoration', 'line-through');
+});
+              </code>
+            </pre>
+            <button id="contains-jq-selector" class="btn btn-lilac col-12">Click me to see the code run!</button>
+            <p class="bg-darkRed">Using <span class="highlight">$('h4')</span>, i can grab all h4 elements and change their content using <span class="highlight">text()</span> method</p>
+          </div>
+        </div>
+      </article>
+    
+      <h2 class="col-12">Manipulation</h2>
+      <article class="col-5 card">
+        <h2 class="card-title">Change attribute - attr()</h2>
+        <img id='change-my-src' src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Candy_in_Damascus.jpg/1200px-Candy_in_Damascus.jpg" alt="">
+        <pre>
+          <code class="language-javascript">
+$('#change-attribute').click(function() {
+  $('#change-my-src').attr('src', 'https://millburyreflector.com/wp-content/uploads/2018/09/candy-900x516.jpg');
+});
+          </code>
+        </pre>
+        <button id="change-attribute" class="btn btn-lilac">Click me to see the code run!</button>
+        <p class="bg-darkRed">This code is used to add an event (the function described) that is going to trigger when we press the button above. The function tells the browser to display the paragraph that is now hidden and its content</p>
+      </article>
+      <article class="col-5 card">
+          <h2 class="card-title">Change value - val()</h2>
+          <pre>
+            <code class="language-javascript">
+$("#change-value").click(function(){
+  $("#changeMyValue").val("Glenn Quagmire");
+});
+            </code>
+          </pre>
+          <input id="changeMyValue" class=" form-control changing-input-appearance mb-2" type="text" name="user">
+          <button id="change-value" class="btn btn-lilac">Click me to see the code run!</button>
+          <p id="showValue"></p>
+          <hr>
+          <select class="form-control changing-input-appearance" name="animals" id="animals">
+            <option value="ostrich">ostrich</option>
+            <option value="toad">toad</option>
+            <option value="turtle">turtle</option>
+          </select>
+          <div class="btn-group mt-4" role="group" aria-label="Basic example">
+            <button id="seeSelected" type="button" class="btn btn-lilac">See selected</button>
+            <button id="changeSelected" type="button" class="btn btn-lilac">Change selected</button>
+          </div>
+          <p id="showSelected"></p>
+          <p class="bg-darkRed">This code is used to add an event (the function described) that is going to trigger when we press the button above. The function tells the browser to display the paragraph that is now hidden and its content</p>
+      </article>
+      <article class="col-5 card">
+        <h2 class="card-title">Toggle Class - toggleClass()</h2>
+        <pre>
+          <code class="language-javascript">
+$("#checkList").click(function(){
+  $("#haveIDoneIt li").toggleClass("done");
+});
+          </code>
+        </pre>
+        <ul id="haveIDoneIt">
+          <li>take pills</li>
+          <li>drink water</li>
+          <li>rest</li>
+        </ul>
+        <button id="checkList" class="btn btn-lilac">Click me to see the code run!</button>
+        <p class="bg-darkRed">This code is used to add an event (the function described) that is going to trigger when we press the button above. The function tells the browser to display the paragraph that is now hidden and its content</p>
+      </article>
+      <article class="col-5 card">
+          <h2 class="card-title">Slide content up and down - slideUp() &amp; slideDown()</h2>
+          <pre>
+            <code class="language-javascript">
+$("#slideItUp").click(function(){
+  $('#slideMe').slideUp();
+});
+
+$("#slideItDown").click(function(){
+  $("#slideMe").slideDown();
+});
+            </code>
+          </pre>
+          <div class="btn-group mt-4" role="group" aria-label="Basic example">
+            <button id="slideItUp" type="button" class="btn btn-lilac">Slide Up</button>
+            <button id="slideItDown" type="button" class="btn btn-lilac">Slide Down</button>
+            <button id="toggleSlide" type="button" class="btn btn-lilac">Slide Toggle</button>
+          </div>
+          <p id="slideMe">I'd like to slide up and down</p>
+          <p class="bg-darkRed">This code is used to add an event (the function described) that is going to trigger when we press the button above. The function tells the browser to display the paragraph that is now hidden and its content</p>
+      </article>
+      <article class="col-5 card">
+        <h2 class="card-title">Fade effects</h2>
+        <pre>
+          <code class="language-javascript">
+$("#fadeOutButton").click(function(){
+$("#fadeMe").fadeOut(1500);
+});
+
+$("#fadeInButton").click(function(){
+$('#fadeMe').fadeIn(1500);
+});
+
+$("#fadeToButton").click(function(){
+$('#fadeMe').fadeTo(1500, 0.5, function() {
+  $(this).css('background-color', '#675199');
+});
+});
+          </code>
+        </pre>
+        <ul id="fadeMe">
+          <li>take pills</li>
+          <li>drink water</li>
+          <li>rest</li>
+        </ul>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button id="fadeOutButton" type="button" class="btn btn-lilac">Fade it Out</button>
+          <button id="fadeInButton" type="button" class="btn btn-lilac">Fade it In</button>
+          <button id="fadeToButton" type="button" class="btn btn-lilac">Fade it To</button>
+        </div>
+        <p class="bg-darkRed">This code is used to add an event (the function described) that is going to trigger when we press the button above. The function tells the browser to display the paragraph that is now hidden and its content</p>
+      </article>
+      <article class="col-5 card">
+        <h2 class="card-title">Hide and show content - hide() &amp; show()</h2>
+        <pre>
+          <code class="language-javascript">
+$("#hideButton").click(function(){
+  $('#hideAndShowMe').hide();
+});
+
+$("#showButton").click(function(){
+  $("#hideAndShowMe").show();
+});
+
+          </code>
+        </pre>
+        <div class="btn-group mt-4" role="group" aria-label="Basic example">
+          <button id="hideButton" type="button" class="btn btn-lilac">Hide paragrapgh</button>
+          <button id="showButton" type="button" class="btn btn-lilac">Show paragraph</button>
+        </div>
+        <p id="hideAndShowMe">I'd like to slide up and down</p>
+        <p class="bg-darkRed">This code is used to add an event (the function described) that is going to trigger when we press the button above. The function tells the browser to display the paragraph that is now hidden and its content</p>
+      </article>
+      <article class="col-11 card">
+          <h2 class="card-title">My CUSTOM todo app</h2>
+          <div class="row">
+            <div class="col-6">
+              <pre>
+                <code class="language-javascript">
+  $('#addToDo').click(function() {
+    var newItem = prompt("type a new 'to do' item:");
+    $('#nothingYet').remove();
+    $("#to-do-applist").append('&lt;li class="list-group-item"&gt;' + newItem + "&lt;/li&gt;");
+    $('.list-group-item').click(function() {      //RESOLVER BUG
+      $(this).addClass('checked');
+    });
+  });
+  
+  $('#deleteToDo').click(function() {
+    $(".list-group-item.checked").remove();
+  });
+                </code>
+              </pre>
+            </div>
+            <div class="col-6">
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="#">Features</a>
+                    <a class="nav-item nav-link" href="#">Pricing</a>
+                  </div>
+                  <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#exampleModal">Login</a>
+                  </div>
+                </div>
+              </nav>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Remember me</label>
+            </div>
+            <div class="d-flex justify-content-end">
+              <button type="submit" class="mt-3 btn btn-lilac">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+              <p class="bg-darkRed">This code is used to add an event (the function described) that is going to trigger when we press the button above. The function tells the browser to display the paragraph that is now hidden and its content</p>
+            </div>
+          </div>
+        </article>
+
+      <article class="col-11 card">
+        <h2 class="card-title">Using Templates</h2>
+        <div class="row">
+          <div class="col-6">
+            <pre>
+              <code class="language-javascript">
+
+              </code>
+            </pre>
+            <p class="bg-darkRed">This code is used to add an event (the function described) that is going to trigger when we press the button above. The function tells the browser to display the paragraph that is now hidden and its content</p>
+          </div>
+          <div class="col-6">
+            <script id="template" type="x-tmpl-mustache">
+              <div class="profile {{style}}">
+                <header>
+                  <h1>{{title}} {{firstName}} {{lastName}}</h1>
+                
+                  <p class="address_{{style}}">
+                  {{address}}<br />
+                  {{address2}}<br />
+                  {{city}}, {{state}} {{zip}}
+                  </p>
+                  
+                  <p class="info_{{style}}">
+                  email: <span class="contact_{{style}}">{{email}}</span><br />
+                  web site: <span class="contact_{{style}}">{{website}}</span>
+                  </p>
+                </header>
+                
+                <section role="region">
+                  <h2>Interests</h2>
+                  <p class="interests_{{style}}">{{interests}}</p>
+                </section>
+                
+                <section role="region">
+                  <h2>Experience</h2>
+                  <p class="experience_{{style}}">{{experience}}</h2>
+                </section>
+                
+              </div>
+            </script>
+            <div class="form" id="form" role="form">
+    
+              <header>
+                <h1>Profile Builder</h1>
+              </header>
+              
+              <section role="region">
+                <h2>Name:</h2>
+                <select id="title">
+                  <option value="">&nbsp;</option>
+                  <option value="Mr.">Mr.</option>
+                  <option value="Miss">Miss</option>
+                  <option value="Mrs.">Mrs.</option>
+                  <option value="Ms.">Ms.</option>		
+                </select>
+                <input type="text" id="firstName" placeholder="First Name" />
+                <input type="text" id="lastName" placeholder="Last Name" />
+              </section>
+              
+              <section role="region">
+                <h2>Address:</h2>
+                <input type="text" id="address" placeholder="123 Main Street" /><br />
+                <input type="text" id="address2" /><br />
+                <input type="text" id="city" placeholder="City" />
+                <input type="text" id="state" placeholder="State" />
+                <input type="text" id="zip" placeholder="Zip Code" />
+              </section>
+              
+              <section role="region">
+                <h2>Info:</h2>
+                <input type="text" id="email" placeholder="Email" /><br />
+                <input type="text" id="website" placeholder="Web Site" />
+              </section>
+              
+              <section role="region">
+                <h2>Interests</h2>
+                <textarea id="interests" rows="6" cols="40"></textarea>
+              </section>
+              
+              <section role="region">
+                <h2>Experience</h2>
+                <textarea id="experience" rows="6" cols="40"></textarea>
+              </section>
+              
+              <section role="region">
+                <h2>Style</h2>
+                <select id="style">
+                  <option value="formal">Formal</option>
+                  <option value="light">Light</option>
+                  <option value="dark">Dark</option>
+                  <option value="colorful">Colorful</option>		
+                </select>
+              </section>
+              
+              <section role="region">
+                <h2>Preview</h2>
+                <p>
+                  <button id="previewBtn"><strong>Build Profile</strong></button>
+                </p>
+              </section>
+              
+            </div>
+              
+            <div id="preview" role="article"></div>
+          </div>
+        </div>
+      </article>
+
+      <h2 class="col-12">jQuery Chaining</h2>
+      <div class="container pt-3 lead">
+        <p class="bg-darkRed text-center p-2">It's possible to <span class="highlight">trigger many methods at once</span> in jQuery</p>
+      </div>
+      <article class="col-11 card">
+        <h2 class="card-title">Chaining</h2>
+        <pre>
+          <code class="language-javascript">
+$('#chainingMethods').click(function() {
+  $('#notification-bar').delay(500).slideDown().delay(1000).fadeOut();
+}); 
+          </code>
+        </pre>
+        <button id="chainingMethods" class="btn btn-lilac">Click me to see the code run!</button>
+        <p id="notification-bar">Hi, there! Glad to have you on my website!</p>
+      </article>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="js/lib/mustache.js"></script>
+    <script src="js/prism.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <!-- <script>window.jQuery || document.write("<script src='js/jquery-3.3.1.min.js'></script>");</script> -->
+    <script src="js/myjquery.js"></script>
+  </body>
+</html>

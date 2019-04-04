@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--Syntax Highlighter-->
+    <link rel="stylesheet" href="css/prism.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Learning jQuery - Building Applications</title>
+  </head>
+  <body>
+    <header class="jumbotron">Building Applications</header>
+    <button id="homeButton" class="btn" onclick="homeButtonFunction()">HOME</button>
+
+    <div class="container-fluid row">
+      <article class="col-11 card">
+        <h2 class="card-title">Boring Racecar Game</h2>
+        <div class="row">
+          <div class="col-6">
+            <pre>
+              <code class="language-javascript">
+$('#go').click(function() {
+  var car1Height = $('#car1').height();
+  var raceTrackHeight = $('#racetrack').height() - 40; //40px = posição do carro
+  var trackWidth = raceTrackHeight - car1Height;
+  var raceTime1 = Math.floor((Math.random() * 5000) + 1);
+  var raceTime2 = Math.floor((Math.random() * 5000) + 1);
+
+  function checkIfcomplete() {
+    if (isComplete == false) {
+      isComplete = true;
+    } else {
+      place = 'second';
+    }
+  }
+  //flag variable to check completion
+  var isComplete = false;
+  //flag variable to first place
+  var place = 'first';
+
+  $('#car1').animate({
+    top: trackWidth
+  }, raceTime1, function() {
+    checkIfcomplete();
+    $('#raceInfo1 span').text('Finished in ' + place + ' place and clocked in at ' + raceTime1 + ' milliseconds!');
+  });
+
+  $('#car2').animate({
+    top: trackWidth
+  }, raceTime2, function() {
+    checkIfcomplete();
+    $('#raceInfo2 span').text('Finished in ' + place + ' place and clocked in at ' + raceTime2 + ' milliseconds!');
+  });
+});
+
+$('#reset').click(function() {
+  $('.cars').css('top', '40px');
+  $('.raceInfo span').text("");
+});
+              </code>
+            </pre>
+          </div>
+          <div class="col-6 d-flex flex-column align-items-center">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button id="go" type="button" class="btn btn-success mr-3 pr-5 pl-5">Race</button>
+              <button id="reset" type="button" class="btn btn-warning pr-5 pl-5">Reset</button>
+            </div>
+            <div id="racetrack" class="d-flex justify-content-around">
+              <img id="car1" class="cars" src="https://clipart.wpblink.com/sites/default/files/wallpaper/car-clipart-clipart/442870/car-clipart-clipart-transparent-background-442870-7518892.png" alt="">
+              <img id="car2" class="cars" src="http://www.clker.com/cliparts/o/q/B/1/w/W/red-car-top-view.svg.hi.png" alt="">
+            </div>
+            <div id="raceInfoContainer">
+              <h2>Results</h2>
+              <div id="raceInfo1" class="raceInfo">Car 1<br><span></span></div>
+              <div id="raceInfo2" class="raceInfo">Car 2<br><span></span></div>
+            </div>
+            <p class="bg-darkRed">This code is used to add an event (the function described) that is going to trigger when we press the button above. The function tells the browser to display the paragraph that is now hidden and its content</p>
+          </div>
+        </div>
+      </article>
+      <article class="col-11 card">
+        <h2 class="card-title">My CUSTOM todo app</h2>
+        <div class="row">
+          <div class="col-6">
+            <pre>
+              <code class="language-javascript">
+$('#addToDo').click(function() {
+  var newItem = prompt("type a new 'to do' item:");
+  $('#nothingYet').remove();
+  $("#to-do-applist").append('&lt;li class="list-group-item"&gt;' + newItem + "&lt;/li&gt;");
+  $('.list-group-item').click(function() {      //RESOLVER BUG
+    $(this).addClass('checked');
+  });
+});
+
+$('#deleteToDo').click(function() {
+  $(".list-group-item.checked").remove();
+});
+              </code>
+            </pre>
+          </div>
+          <div class="col-6 d-flex flex-column align-items-center">
+            <div class="todo-interface d-flex justify-content-around p-3">
+              <ul id="to-do-applist" class="list-group">
+                <li id="nothingYet" class="list-group-item">Add a to-do...</li>
+              </ul>
+              <div class="commands d-flex flex-column align-items-center justify-content-center">
+                <div class="to-do-buttons d-flex justify-content-around">
+                  <button id="addToDo" type="button" class="btn btn-lilac todo-buttons"><i class="fas fa-plus"></i></button>
+                  <button id="deleteToDo" type="button" class="btn btn-lilac todo-buttons"><i class="fas fa-trash-alt"></i></button>
+                </div>
+                <div id="list-instructions" class="d-flex flex-column mt-3">
+                  <p class="lead">Instructions:</p>
+                  <p>Click on the <span><i class="fas fa-plus"></i></span> button to add an item</p>
+                  <p>Click on an item to check it</p>
+                  <p>Click on the <span><i class="fas fa-trash-alt"></i></span> button to delete checked items</p>
+                </div>
+              </div>
+            </div>
+            <p class="bg-darkRed">This code is used to add an event (the function described) that is going to trigger when we press the button above. The function tells the browser to display the paragraph that is now hidden and its content</p>
+          </div>
+        </div>
+      </article>
+      <article class="col-11 card">
+        <h2 class="card-title">More professional todo app</h2>
+        <div class="row">
+          <div class="col-6">
+            <pre>
+              <code class="language-javascript">
+
+              </code>
+            </pre>
+          </div>
+          <div class="col-6 d-flex flex-column align-items-center">
+            <section id="todoApp" class="row">
+              <header class="col-12 d-flex align-items-center">
+                  <h3 class="col-10">to-do list</h3>
+                  <button id="addToDoButton" type="button" class="btn col-2"><i class="fas fa-plus"></i></button>
+              </header>
+              <input id="newToDo" class="col-12" type="text" placeholder="add a to-do...">
+              <ul id="todoListItems" class="col-12">
+              </ul>
+            </section>
+            <p class="bg-darkRed">This code is used to add an event (the function described) that is going to trigger when we press the button above. The function tells the browser to display the paragraph that is now hidden and its content</p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="js/prism.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <!-- <script>window.jQuery || document.write("<script src='js/jquery-3.3.1.min.js'></script>");</script> -->
+    <script src="js/jquery.color-2.1.2-min.js"></script>
+    <script src="js/myjquery.js"></script>
+  </body>
+</html>

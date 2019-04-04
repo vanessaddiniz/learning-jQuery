@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--Syntax Highlighter-->
+    <link rel="stylesheet" href="css/prism.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Learning jQuery - Events</title>
+  </head>
+  <body>
+    <header class="jumbotron">Events</header>
+    <button id="homeButton" class="btn" onclick="homeButtonFunction()">HOME</button>
+
+    <div class="container-fluid row">
+      <h2 class="col-12">multiple events</h2>
+      <div class="container pt-3 lead">
+        <p class="bg-darkRed text-center p-2">It is possible to set the same event <span class="highlight">to multiple elements at once</span></p>
+      </div>
+      <article class="col-11 card">
+        <div class="row">
+          <div class="col-6">
+            <pre>
+              <code class="language-javascript">
+$('.sameEvent').click(function() {
+$(this).removeClass('btn-lilac');
+$(this).addClass('btn-danger');
+});
+              </code>
+            </pre>
+          </div>
+          <div class="col-6 d-flex flex-column justify-content-center">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-lilac sameEvent">Left</button>
+              <button type="button" class="btn btn-lilac sameEvent">Middle</button>
+              <button type="button" class="btn btn-lilac sameEvent">Right</button>
+            </div>
+            <p class="bg-darkRed">This code is used to add an event (the function described) that is going to trigger when we press the button above. The function tells the browser to display the paragraph that is now hidden and its content</p>
+          </div>
+        </div>
+      </article>
+      <h2 class="col-12">on</h2>
+      <div class="container pt-3 lead">
+        <p class="bg-darkRed text-center p-2">The <span class="highlight">on()</span> method is just like <span class="highlight">addEventListener</span> in vanilla JS.It lets you specify what type of event you're adding</p>
+      </div>
+      <div class="container pt-3 lead bg-darkRed">
+        <h2>On('click') vs click()</h2>
+        <p class="text-center"><span class="highlight">click()</span> only adds listeners for <span class="highlight">existing elements</span></p>
+        <p class="text-center"><span class="highlight">on()</span> will add listeners for <span class="highlight">all future potential elements</span></p>
+      </div>
+      <article class="col-5 card">
+        <h2 class="card-title">On double click</h2>
+        <pre>
+          <code class="language-javascript">
+$('#doubleClickMe').on("dblclick", function() {
+  alert("You've clicked me, I've got it already!")
+});
+          </code>
+        </pre>
+        <button id="doubleClickMe" class="btn btn-lilac">Double click me!</button>
+        <!-- <div class="myAlert">
+          <p>hi there!</p>
+          <button class="btn btn-sm btn-lilac">ok</button>
+        </div> -->
+        <p class="bg-darkRed">This code is used to add an event (the function described) that is going to trigger when we press the button above. The function tells the browser to display the paragraph that is now hidden and its content</p>
+      </article>
+      <article class="col-5 card">
+          <h2 class="card-title">On scroll</h2>
+          <pre>
+            <code class="language-javascript">
+$('.scrollme').on("scroll", function() {
+  $(this).css({backgroundColor: '#280014', color: '#c199ad'});
+});
+            </code>
+          </pre>
+          <div class="scrollme">
+            <h1>scroll me!</h1>
+            <p>hi there!</p>
+            <p>i'm just waiting...</p>
+            <p>... for you to scroll me...</p>
+            <p>...so i...</p>
+            <p>...can trigger</p>
+            <p>... an event!</p>
+          </div>
+          <p class="bg-darkRed">This code is used to add an event (the function described) that is going to trigger when we press the button above. The function tells the browser to display the paragraph that is now hidden and its content</p>
+        </article>
+      <h2 class="col-12">mouse events</h2>
+      <article class="col-5 card">
+        <h2 class="card-title">Hover</h2>
+        <pre>
+          <code class="language-javascript">
+$('#hoverEffect').hover(function() {       //hover in
+  $(this).removeClass('btn-lilac');
+  $(this).addClass('btn-danger');
+}, function() {                            // hover out
+  $(this).removeClass('btn-danger');
+  $(this).addClass('btn-lilac');
+});
+
+          </code>
+        </pre>
+        <button id="hoverEffect" class="btn btn-lilac">Hover me to see my background color change</button>
+        <p class="bg-darkRed">This code is used to add an event (the function described) that is going to trigger when we press the button above. The function tells the browser to display the paragraph that is now hidden and its content</p>
+      </article>
+      <h2 class="col-12">keyboard events</h2>
+      <article class="col-5 card">
+        <h2 class="card-title">keydown() - When a key is pressed</h2>
+        <pre>
+          <code class="language-javascript">
+$('#onKeydownEvent').keydown(function(event) {
+  $('#showInputKeydownText').html("Key: " + event.which);
+});
+          </code>
+        </pre>
+        <input type="text" id="onKeydownEvent" class="form-control changing-input-appearance" placeholder="Tell me your name">
+        <p id="showInputKeydownText"></p>
+        <p class="bg-darkRed">This code is used to add an event (the function described) that is going to trigger when we press the button above. The function tells the browser to display the paragraph that is now hidden and its content</p>
+      </article>
+      <article class="col-5 card">
+        <h2 class="card-title">keypress() - When a key is pressed</h2>
+        <pre>
+          <code class="language-javascript">
+$('#onKeydownEvent').keydown(function(event) {
+  $('#showInputKeydownText').html("Key: " + event.which);
+});
+          </code>
+        </pre>
+        <input type="text" id="onKeypressEvent" class="form-control changing-input-appearance" placeholder="Tell me your name">
+        <p id="showInputKeypressText"></p>
+        <p class="bg-darkRed">This code is used to add an event (the function described) that is going to trigger when we press the button above. The function tells the browser to display the paragraph that is now hidden and its content</p>
+      </article>
+      <h2 class="col-12">form events</h2>
+      <article class="col-5 card">
+        <h2 class="card-title">Blur() - When Lose Focus</h2>
+        <pre>
+          <code class="language-javascript">
+$('#onBlurEvent').blur(function() {
+  $('#showInputText').text($(this).val());
+});
+          </code>
+        </pre>
+        <input type="text" id="onBlurEvent" class="form-control changing-input-appearance" placeholder="Tell me your name">
+        <p id="showInputText"></p>
+        <p class="bg-darkRed">This code is used to add an event (the function described) that is going to trigger when we press the button above. The function tells the browser to display the paragraph that is now hidden and its content</p>
+      </article>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="js/prism.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <!-- <script>window.jQuery || document.write("<script src='js/jquery-3.3.1.min.js'></script>");</script> -->
+    <script src="js/myjquery.js"></script>
+  </body>
+</html>

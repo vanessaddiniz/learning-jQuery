@@ -1,0 +1,1151 @@
+:root {
+  --readOnlyBgColor: #c199ad;
+}
+
+body {
+  background-color: #c199ad;
+  color: #e0ccd6;
+}
+
+hr {
+  border-top: 1px solid rgb(245,245,245);
+}
+
+/* font: style weight variant size/line-height family*/
+
+.jumbotron {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #f5f5f5;
+  background-color: #660033;
+  border-radius: 0;
+  box-shadow: 1px 1px 3px 2px #33001a;
+  text-shadow: 4px 4px 2px rgba(51,0,26, 0.8);
+}
+
+#indexheader {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 900;
+}
+
+h2.col-12 {
+  color:#660033;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(51,0,26, 0.8);
+}
+
+.card {
+  margin: 4.15%;
+  position: relative;
+  background-color: #751947;
+}
+
+.card h2 {
+  text-shadow: 4px 4px 2px rgba(51,0,26, 0.8);
+}
+
+article h3 {
+  text-align: center;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  text-shadow: 1px 1px 2px rgba(51,0,26, 0.8);
+}
+
+pre[class*="language-"] {
+  padding: 0 10px;
+  background-color: #280014;
+  border: .3em solid hsla(0, 25%, 52%, 1);
+}
+
+pre code {
+  color: #f5f5f5;
+}
+
+code.nightmode {
+  background: #000;
+  color: #02a902;
+  font-weight: bold;
+}
+
+.not-too-long {
+  height: 400px; 
+}
+
+
+.bg-darkRed {
+  background-color: #660000;
+  padding: 2%;
+}
+
+.codeShadow {
+  box-shadow: 3px 3px 5px 6px #ccc;
+}
+
+
+/* p:not(id) {
+  background-color: yellowgreen;
+} */
+
+p.bg-darkRed {
+  padding: 2px 8px;
+  text-align: justify;
+  margin-top: 10px;
+}
+
+span.highlight {
+  color: #72c8e8;
+  text-decoration: none;
+}
+
+h4 {
+  color: #72c8e8 !important; 
+  font-weight: 600;
+}
+
+p span {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.blue {
+  font-family: cursive;
+  color: blue;
+}
+
+#homeButton {
+  font-size: 2rem;
+  padding: 1.5% 3%;
+  background-color: #f5f5f5;
+  color: #493267;
+  font-weight: 700;
+  position: absolute;
+  top: 60px;
+  right: 100px;
+  box-shadow: 1px 1px 3px 2px #33001a;
+  text-shadow: 1px 1px 1px rgba(51,0,26, 0.8);
+}
+
+.btn-lilac {
+  background-color: #efbbff;
+  color: #33001a;
+  margin-bottom: 2%;
+  box-shadow: 1px 1px 2px #33001a;
+  font-weight: 700;
+}
+
+.btn-fucsia {
+  background-color: #bd38b2;
+  color: #f5f5f5;
+  margin-bottom: 2%;
+  box-shadow: 1px 1px 2px #33001a;
+  font-weight: 700;
+}
+
+#changeImgFunction {
+  margin-bottom: 10px;
+}
+
+img.two-per-line {
+  width: 45%;
+  height: 310px;
+}
+
+li.list-group {
+  margin: 2% 0;
+}
+
+.changing-input-appearance {
+  background-color: var(--readOnlyBgColor);
+  border: 2px solid #fff;
+  box-shadow: inset 0 0 10px #444;
+  outline: none;
+}
+
+.changing-input-appearance::placeholder {
+  color: #333;
+}
+
+.changing-input-appearance:focus::placeholder {
+  color: #843232;
+}
+
+.changing-input-appearance:focus {
+  background-color: #A36666;
+  box-shadow: 2px 2px 3px 3px #660033;
+  border-color: #925b5b;
+  color: #470023;
+  outline: none;
+}
+
+#notification-bar {
+  display: none;
+  background-color: #280014;
+  color: #EEE40B;
+  padding: 10px;
+  text-align: center;
+  font-weight: 700;
+  width: 90%;
+  margin: 0 auto;
+  position: fixed;
+  top:0;
+  left:5%;
+}
+
+/* placeholder */
+.readonlyInput::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #222;
+}
+.readonlyInput::placeholder { /* Firefox 19+ */
+  color: #222;
+}
+
+.readonlyInput:-ms-input-placeholder { /* IE 10+ */
+  color: #222;
+}
+.readonlyInput:-moz-placeholder { /* Firefox 18- */
+  color: #222;
+}
+/*end of placeholder*/
+#backToTop {
+  height: 3em;
+  width: 3em;
+  position: fixed;
+  top: 90%;
+  left: 95%;
+  z-index: 3;
+  border: ridge E0A800;
+  border-radius: 10%;
+  box-shadow: 5px 10px 18px #111;
+  display: none;
+}
+
+#backToTop i {
+  font-size: 2rem;
+}
+
+#calculator {
+  border: 10px groove black;
+  text-align: center;
+  padding: 2%;
+  background-color: #3d21a5;
+  color: white;
+  font-weight: 600;
+  box-shadow: 3px 3px 5px 6px #ccc;
+  margin-bottom: 2%;
+}
+
+input.runtime {
+  width: 20%;
+}
+
+.context-menu {
+  position: relative;
+  top: -10px;
+  padding: 5px;
+  background: #2f7585;
+  width: 200px;
+  color: #f5f5f5;
+}
+
+.context-menu-items {
+  list-style: none;
+  margin: 0 9px;
+  padding: 0;
+}
+
+.context-menu-item {
+  margin-bottom: 4px;
+  border-bottom: 1px solid #f5f5f5;
+  padding: 4px 12px;
+  text-decoration: none;
+}
+
+.context-menu-item:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.off {
+  display: none;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-title {
+  font-weight: 700;
+}
+
+.modal-content {
+  background-color: #280014;
+  border: 8px solid #A36666;
+  border-radius: 10px;
+}
+
+#emailHelp {
+  color: #9a7a8a;
+}
+
+.modal-content  span{
+  color: white;
+}
+
+.modal input[type='checkbox']:checked {
+	background-color: #280014;
+	border: 1px solid #f5f5f5;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+	color: #99a1a7;
+}
+
+.modal input[type='checkbox']:checked:after {
+	content: '\2714';
+	font-size: 10px;
+	position: absolute;
+	top: -2px;
+	left: 0;
+	color: #f5f5f5;
+}
+
+
+/* .context-menu {
+ /* position: absolute;
+/*  z-index: 10;*/
+/*  padding: 12px 0;
+  width: 240px;
+  background-color: #666;
+  color: #f5f5f5;
+  border: solid 1px #dfdfdf;
+  box-shadow: 1px 1px 2px #cfcfcf;
+}
+
+.context-menu--active {
+  display: block;
+}
+
+.context-menu-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.context-menu-item {
+  display: block;
+  margin-bottom: 4px;
+  padding: 4px 12px;
+  text-decoration: none;
+}
+
+.context-menu-item:last-child {
+  margin-bottom: 0;
+} */
+
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 93.5%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+  border: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none;
+  border: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 93.5%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #FFC107;
+  cursor: pointer;
+  margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 1px 1px 1px #666, 0px 0px 1px #666; /* Add cool effects to your sliders! */
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #666, 0px 0px 1px #666;
+  border: none;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #FFC107;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #666, 0px 0px 1px #666;
+  border: none;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #FFC107;
+  cursor: pointer;
+}
+
+/*slider track*/
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #666, 0px 0px 1px #666;
+  background: #429ef4;
+  border-radius: 1.3px;
+  border: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #429ef4;
+  border: none;
+  outline: none;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #666, 0px 0px 1px #666;
+  background: #429ef4;
+  border-radius: 1.3px;
+  border: none;
+  outline: none;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+  outline: none;
+}
+input[type=range]::-ms-fill-lower {
+  background: #429ef4;
+  border: none;
+  outline: none;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #666, 0px 0px 1px #666;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #429ef4;
+  outline: none;
+}
+input[type=range]::-ms-fill-upper {
+  background: #429ef4;
+  border: none;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #666, 0px 0px 1px #666;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #429ef4;
+  outline: none;
+}
+
+textarea.changing-input-appearance {
+  margin-bottom: 10px;
+}
+
+.specialText::selection {
+  background: #29a546;
+  color: white;
+}
+
+
+/*-----------------------------------------------TEMPLATE--------------------------------------------------------*/
+/* --- profile builder form --- */
+
+.form {
+	border-bottom: 1px dashed #ccc;
+  margin: 0 0 1.2em;
+  background-color: #ce88bf;
+}
+	
+/* form sections */
+
+.form header {
+	padding: 1em 5%;
+	margin: auto;
+}
+
+.form section {
+	background: #c199ad;
+	padding: 1em 5%;
+	border-top: 1px dashed #ccc;
+	margin: auto;
+}
+
+/* form typography */
+
+.form h1 {
+  color: #751947;
+  font-weight: 900;
+  text-shadow: 1px 1px 2px rgba(51,0,26, 0.8);
+}
+	
+.form h2 {
+	font-size: 1.2em;
+	color: #280014;
+	margin: 0 0 .6em;
+}
+
+/* form fields */
+
+.form input {
+  display: inline-block;
+  border-radius:3px;
+}
+
+.form input,
+.form textarea {
+	border: 1px solid #ccc;
+}
+
+.form input,
+.form select,
+.form textarea {
+	box-sizing: border-box;
+	padding: .5em;
+	margin: .25em .125em;
+}
+	
+.form input {
+	width: 100%;
+	max-width: 18em;
+}
+
+#state,
+#zip {
+	max-width: 6em;
+}
+	
+.form textarea {
+	width: 100%;
+	max-width: 30em;
+	line-height: 1.4;
+}
+
+/* form button */
+
+#previewBtn {
+	display: inline-block;
+	width: 13.5em;
+	color: #ce88bf;
+	background: #751947;
+	padding: 1.2em;
+	border: none;
+	border-radius: .5em;
+  margin: .25em .125em;
+  box-shadow: 2px 2px 2px #280014;
+}
+
+#previewBtn:active, 
+#previewBtn:focus {
+	background: #555;
+}
+
+[role="article"] {
+  background-color: white;
+  color: #280014;
+  padding: 20px;
+}
+
+/*-------------------------------------------END OF TEMPLATE FORM----------------------------------------------------*/
+
+
+
+/*---------------------------------------------MOVIE FINDER--------------------------------------------------------*/
+/* search section */
+
+#search {
+	background: #eee;
+	padding: 1em 5%;
+	border-bottom: 1px dashed #ccc;
+}
+
+/* search text label */
+
+#search label {
+	display: inline-block;
+	font-weight: bold;
+	font-size: 1.8em;
+	line-height: 1.2;
+	color: #ff7b00;
+	vertical-align: middle;
+	}
+
+/* search text */
+
+#search_text {
+	padding: .5em;
+	border: 1px solid #ccc;
+	margin: .25em .125em;
+}
+
+/* search button */
+
+#search_button {
+	display: inline-block;
+	font-weight: bold;
+	color: #fff;
+	background: #ff7b00;
+	padding: .8em 1.6em;
+	border: 1px solid #fff;
+	border-radius: .5em;
+	margin: .25em .125em;
+}
+
+#search_button:active, 
+#search_button:focus {
+	background: #555;
+}
+
+/* list, details */
+
+#list,
+#details {
+	float: left;
+	width: 29%;
+	margin: 0 0 0 3%;
+}
+
+#details {
+	width: 65%;
+	margin: 0 3% 0 0;
+}
+
+#list ul {
+	padding: 1.2em 1.6em;
+}
+
+#list li {
+	font-size: 90%;
+	color: #f90;
+	margin: .2em 0;
+}
+
+#list a {
+	font-size: 110%;
+	color: #000;
+	line-height: 1.4em;
+	text-decoration: none;
+	border-bottom: 1px dashed transparent;
+	vertical-align: middle;
+}
+
+#list a:hover,
+#list a:active,
+#list a:focus {
+	border-bottom: 1px solid #f90;
+}
+	
+#details {
+	padding: 1em 0;
+}
+
+#details h2 {
+	font-size: 1.8em;
+	line-height: 1.2;
+}
+
+#details h3 {
+	font: normal 1em/1.2 sans-serif;
+	color: #555;
+	margin: .4em 0 1em;
+}
+
+#poster {
+	float: left;
+	width: 32%;
+	padding: 1em;
+	border: 1px solid #ccc;
+	margin: .4em 1.4em .8em 0;
+}	
+
+#details p {
+	width: 94%;
+	line-height: 1.4em;
+	margin: 1.4em 0;
+}
+/*-------------------------------------------END OF MOVIE FINDER------------------------------------------------*/
+
+
+.animations {
+  background-color: #ddd;
+}
+.done {
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.container-square {
+  text-align: center;
+  background-color: #3d21a5;
+  height: 100px;
+  width: 500px;
+  position: relative;
+  margin: 0 auto;
+}
+
+#animate {
+  background-color: #29a546;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+}
+
+#cat {
+  position: relative;
+  left: 0px;
+}
+
+#ohnoesCss {
+  animation-name: scaryBigger;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes scaryBigger {
+  0% {
+    width: 50px;
+  }
+  100% {
+    width: 300px;
+  }
+}
+
+
+/*--------------------------------canvas--------*/
+canvas {
+  background-color: #280014;
+  border: .3em solid hsla(0, 25%, 52%, 1);
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+input[type='checkbox'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+	background-color: #fafafa;
+	border: 1px solid #aaa;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+	padding: 6px;
+	border-radius: 3px;
+	display: inline-block;
+	position: relative;
+}
+
+input[type='checkbox']:active, input[type='checkbox']:checked:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+input[type='checkbox']:checked {
+	background-color: #e9ecee;
+	border: 1px solid #adb8c0;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+	color: #99a1a7;
+}
+
+input[type='checkbox']:checked:after {
+	content: '\2714';
+	font-size: 10px;
+	position: absolute;
+	top: -2px;
+	left: 0;
+	color: #99a1a7;
+}
+
+.done {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+#scoreKeeper {
+  background: linear-gradient(135deg, #ce88bf 0%,#db4dbf 19%,#b558e0 40%,#597ee5 76%,#7598d1 100%);
+  padding: 3%;
+  border: 10px solid #17A2B8;
+  border-radius: 18px / 30px;
+  margin: 3%;
+  color: #f5f5f5;
+  font-weight: 700;
+}
+
+#numberOfRoundsInput {
+  width: 50%;
+}
+
+p#score {
+  font-size: 2rem;
+  text-align: center;
+}
+
+p#score span {
+  text-decoration: none;
+}
+
+/*-------------------------------COLOR GAME-----------------------------------*/
+#color-game-background {
+  background-color: #232323;
+  padding-bottom: 3%;
+}
+
+#color-game-background::after { /* makes a parent appear when all children are floated*/
+  content: '';
+  display: block;
+  clear: both;
+  width: 0;
+  height: 0;
+}
+
+#color-game-background header {
+  background: linear-gradient(to right, #0575e6, #021b79); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 3% 0 1%;
+  margin-bottom: 2%;
+}
+
+#color-game-background h2 {
+  color: #f5f5f5;
+  text-align: center;
+  font-weight: 900;
+}
+
+#colorDisplay {
+  text-decoration: none;
+  font-size: 3rem;
+}
+
+.gameMenu {
+  background-color: white;
+  width: 98%;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.gameMenu button.btn {
+  font-weight: 700;
+  color: #0465D3;
+  text-transform: uppercase;
+  border-radius: 0;
+  border: none;
+  transition: all 0.3s; 
+  outline: none;
+}
+
+.gameMenu button.btn:hover {
+  background-color: #022A8B;
+  color: white;
+}
+
+.gameMenu button.btn:focus, .gameMenu button.btn:active {
+  outline: none;
+  border: none;
+} 
+
+#reset:hover {
+  background-color: #0463D0;
+}
+
+.gameMenu button.btn.buttonSelected {
+  background-color: #022A8B;
+  color: white;
+}
+
+.square {
+  width: 30%;
+  background-color: pink;
+  padding-bottom: 30%;
+  float: left;
+  margin: 1.66%;
+  border-radius: 10%;
+  box-shadow: 2px 2px 2px #222;
+  transition: background-color 0.3s; 
+}
+
+.scrollme {
+  text-align: center;
+  height: 150px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #c199ad;
+  color: #280014;
+  padding: 10px;
+}
+
+#animatedBox {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  background-color: #280014;
+  border: 4px solid #A36666;
+}
+
+#navArrows {
+  background-color: #280014;
+  padding: 10% 0;
+  border-radius: 50%;
+  height: 180px;
+  width: 180px;
+}
+
+#navArrows button {
+  font-weight: 900;
+  margin: 1px 0;
+}
+
+#navArrows .navigationUp {
+  position: relative;
+  top: -30px;
+  left: -0.5px;
+}
+
+#navArrows .navigationDown {
+  position: relative;
+  top: 2px;
+  left: -0.5px;
+}
+
+#navArrows .navigationRight, #navArrows .navigationLeft {
+  position: relative;
+  top: 15%;
+  left: 2px;
+}
+
+#navArrows .navigationRight {
+  left: -3px;
+}
+
+.myAlert {
+  padding: 10px;
+  background-color: #280014;
+  border: .3em solid hsla(0, 25%, 52%, 1);
+}
+
+.myAlert p {
+  text-align: center;
+  font-weight: 700;
+}
+
+.myAlert button {
+  padding-left: 10%;
+  padding-right: 10%;
+  position: relative;
+  left: 70%;
+}
+
+.carousel-item img {
+  height: 300px;
+}
+
+#slideshow img {
+  width: 100%;
+  height: 320px;
+}
+
+#slideshow ~ div p {
+  cursor: pointer;
+}
+
+#racetrack {
+  margin-top: 20px;
+  border: 9px solid white;
+  border-radius: 5px;
+  background: url('../img/road02_02.jpg') repeat center;
+  height: 500px;
+  border-bottom: 9px dashed white;
+  box-sizing: border-box;
+}
+
+.cars {
+  position: relative;
+  top: 40px;
+  transform: rotate(90deg);
+  height: 50px;
+}
+
+#raceInfoContainer {
+  width: 100%;
+  margin: 40px auto 10px;
+  background-color: #280014;
+  height: 200px;
+  padding: 3% 0;
+  border: 3px solid #ce88bf;
+}
+
+#raceInfoContainer h2 {
+  width: 100%;
+  margin-bottom: 5px;
+  border-bottom: 2px solid #ce88bf;
+  text-align: center;
+}
+
+#raceInfoContainer span {
+  font-weight: normal;
+  color: #f5f5f5;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0 10px;
+}
+
+.raceInfo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ce88bf;
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+
+#raceInfo1 {
+  color: #AFFE14;
+}
+
+#raceInfo2 {
+  color: #16C916;
+}
+
+/*todo app*/
+.todo-interface {
+  width: 100%;
+  background-color: #280014;
+  border: 5px solid #efbbff;
+  border-radius: 5px;
+}
+
+.list-group-item {     
+  background-color: #efbbff;
+  color: #280014;
+  font-weight: 600;
+  transition: color .5s, background-color .5s, text-decoration .5s;
+}
+
+.checked {
+  text-decoration: line-through;
+  background-color: #dce1ea;
+  color: #7c8584;
+}
+
+.to-do-buttons {
+  width: 60%;
+}
+
+#list-instructions {
+  padding: 10px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/*PROFESSIONAL TODO LIST APP*/
+#todoApp {
+  background-color: #ce88bf;
+  color: #280014;
+  width: 70%;
+}
+
+  #todoApp * {
+    padding: 0;
+    margin: 0;
+  }
+
+  #todoApp header {
+    background-color: #280014;
+    color: #ce88bf;
+    text-transform: uppercase;
+  }
+
+    #todoApp header h3 {
+      border: none;
+      font-weight: 700;
+    }
+
+    #todoApp header button {
+      border-left: 1px solid #ce88bf;
+      color: #ce88bf;
+      border-radius: 0;
+      height: 40px;
+    }
+
+  #newToDo {
+    border: none;
+    padding: 10px 10px 10px 20px;
+    display: none;
+    box-shadow: inset 2px 2px 4px #444;
+    color: #280014;
+  }
+
+  #todoApp #todoListItems {
+    min-height: 40px;
+  }
+
+    #todoApp #todoListItems div {
+      border-bottom: 1px solid #aaa;
+    }
+
+    /* #todoApp #todoListItems div:nth-child(2n) {
+      background-color: #e1b7d8;
+    } */
+
+    #todoApp #todoListItems span {
+      background-color: #280014;
+      color: #ce88bf;
+      width: 0;
+      display: inline-block;
+      line-height: 40px;
+      text-align: center;
+      transition: width 0.5s;
+    }
+
+    #todoApp #todoListItems div:hover span {
+      width: 12%;
+    }
+
+    #todoApp #todoListItems div:hover li {
+      width: 88%;
+    }
+
+    #todoApp #todoListItems li {
+      list-style-type: none;
+      height: 40px;
+      line-height: 40px;
+      width: 100%;
+      transition: width 0.5s;
+    }
+
+    
+
+
+

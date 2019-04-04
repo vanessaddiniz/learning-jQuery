@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.heart {
+			width: 40px;
+			height: 40px;
+			background-color: cornflowerblue;
+			position: relative;
+			top: 200px;
+			left: 200px;
+			transform: rotate(-45deg);
+		}
+		
+		.heart::after {
+			content: '';
+			background-color: cornflowerblue;
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			left: 20px;
+			border-radius: 50%;			
+		}
+		.heart::before {
+			content: '';
+			background-color: cornflowerblue;
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top: -20px;
+			border-radius: 50%;			
+		}
+		
+		.triangle {
+			width: 80px;
+			height: 80px;
+			background-color: cornflowerblue;
+			position: relative;
+			top: 400px;
+			left: 400px;
+		}
+		
+		.triangle::after {
+			content: '';
+			border: 40px solid transparent;
+			border-right: 40px solid yellow;
+			border-left: 40px solid yellow;
+			position: absolute;
+			transform: rotate(45deg);
+			
+		}
+		.triangle::before {
+			content: '';
+			border: 40px solid transparent;
+			border-top: 40px solid red;
+			position: absolute;
+			top: -40px;
+		}
+		
+		/*transform: matrix(scaleX(), skewY(), skewY(), scaleY(), translateX(), translateY())*/
+		
+		.box {
+			height: 100px;
+			width: 100px;
+			background-color: crimson;
+			margin-left: 100px;
+			transition: transform 3s;
+			transform: rotate(45deg);
+			transform: matrix(1, -0.5, -0.5, 1, 0, 0);
+		}
+	</style>
+</head>
+<body>
+	<div class="heart"></div>
+	<div class="triangle"></div>
+	<div class="box"></div>
+</body>
+</html>
